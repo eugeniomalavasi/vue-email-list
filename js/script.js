@@ -8,12 +8,13 @@ createApp({
         }
     }, methods: {
         emailGen: function (emailTotal) {
+            this.emailArray = []; 
             for(let i = 0; i < emailTotal; i++) {
             axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((email) => {
                 this.emailArray.push(email.data.response)
                 console.log(this.emailArray);
-            })
-            console.log(this.emailTotal);
+                console.log(this.emailArray.length);
+            })            
         }}
     },
 }).mount('#app')

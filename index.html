@@ -11,11 +11,11 @@
 <body>
     <div id="app">
         <label for="numb">inserisci il numero di email da generare</label>
-        <input type="text" id="numb" v-model="emailTotal">
+        <input type="text" id="numb" @keyup.enter="emailGen(emailTotal)" v-model="emailTotal">
         <br>
         <button @click="emailGen(emailTotal)">genera email</button>
         <ul>
-            <li v-for="curEmail in emailArray" v-if="emailTotal <= emailArray.length"> {{ curEmail }} </li>
+            <li v-for="curEmail in emailArray" v-show="emailTotal == emailArray.length"> {{ curEmail }} </li>
         </ul>
     </div>
 
