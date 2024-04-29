@@ -11,7 +11,7 @@
 <body>
     <div id="app">
         <button @click="emailGen">genera email</button>
-        <p v-for="curEmail in emailArray"> {{ curEmail }} </p>
+        <p v-for="curEmail in emailArray" v-if="emailArray.length === 10"> {{ curEmail }} </p>
     </div>
 
     <!-- axios -->
