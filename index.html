@@ -15,6 +15,7 @@
         <br>
         <button @click="emailGen(emailTotal)">genera email</button>
         <ul>
+            <p v-if="loading === true">loading in progress</p>
             <li v-for="curEmail in emailArray" v-show="emailTotal == emailArray.length"> {{ curEmail }} </li>
         </ul>
     </div>
